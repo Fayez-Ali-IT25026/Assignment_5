@@ -2,7 +2,7 @@ import Logo from '../assets/logo-text.png'
 
 const Nav = () => {
   return (
-    <nav className="flex items-center justify-between px-10 py-5 bg-white container mw-auto">
+    <nav className="flex items-center justify-between px-10 py-5 bg-white container mx-auto">
       
       <div>
         <img src={Logo} alt="Dev Stack Logo" className="w-40" />

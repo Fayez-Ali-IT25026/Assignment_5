@@ -1,5 +1,5 @@
 import Nav from './components/Nav'
-
+import Banner from './components/Banner'
 
 function App() {
   
@@ -7,6 +7,7 @@ function App() {
   return (
     <>
    <Nav />
+   <Banner/>
     </>
   )
 }
