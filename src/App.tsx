@@ -1,12 +1,12 @@
 import Nav from './components/Nav'
 import Banner from './components/Banner'
 import Fotter from './components/Fotter'
-import type { promises } from './dev types/devStackType';
-import dev_stack from './components/devstack/dev_stack'
+import type { MydevStack } from './dev types/devStackType';
+import DevStack from './components/devstack/DevStack'
 import { Suspense } from 'react';
 
 
-const devfetch = async ():promises<MydevStack[]> => 
+const devfetch = async (): Promise<MydevStack[]> => 
 {
   const res = await fetch ("/data.json");
   const data = await res.json();
@@ -20,10 +20,11 @@ function App() {
     <>
    <Nav />
    <Banner/>
-   <Fotter/>
    <Suspense fallback = {<h2>Loading .....</h2>}>
-    <dev_stack devPromise={devPromise} />
+    <DevStack devPromise={devPromise} />
    </Suspense>
+   <Fotter/>
+   
     </>
   )
 }
