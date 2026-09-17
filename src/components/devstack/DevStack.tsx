@@ -29,6 +29,10 @@ const DevStack = ({ devPromise }: DevStackProps) => {
 
         setStack([...stack, technology]);
     };
+    const handleRemoveFromStack = (id: string) => {
+    setStack(stack.filter(item => item.id !== id));
+};
+
 
     return (
         <div className="container mx-auto">
@@ -54,7 +58,7 @@ const DevStack = ({ devPromise }: DevStackProps) => {
                     />
                 </div>
 
-                <YourStack stack={stack} />
+                <YourStack stack={stack} handleRemoveFromStack={handleRemoveFromStack}/>
 
             </div>
         </div>

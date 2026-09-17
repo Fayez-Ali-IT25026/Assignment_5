@@ -1,10 +1,15 @@
 import type { MydevStack } from '../../dev types/devStackType';
 
+
 interface YourStackProps {
     stack: MydevStack[];
+    handleRemoveFromStack: (id: string) => void;
 }
 
-const YourStack = ({ stack }: YourStackProps) => {
+const YourStack = ({
+    stack,
+    handleRemoveFromStack
+}: YourStackProps) => {
     return (
         <div className="border rounded-lg p-4">
             <h2 className="text-xl font-bold">
@@ -42,6 +47,12 @@ const YourStack = ({ stack }: YourStackProps) => {
                                 {item.category}
                             </p>
                         </div>
+                       <button
+    onClick={() => handleRemoveFromStack(item.id)}
+    className="btn btn-sm btn-error"
+>
+    ✕
+</button>
                     </div>
                 ))}
             </div>
