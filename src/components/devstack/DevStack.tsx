@@ -32,7 +32,7 @@ const DevStack = ({ devPromise }: DevStackProps) => {
                 </p>
             </div>
 
-            <Technologies devStack={devStack} />
+            <Technologies devStack={devStack} handleAddToStack={handleAddToStack}/>
         </div>
     );
 };

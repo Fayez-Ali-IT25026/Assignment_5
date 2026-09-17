@@ -3,14 +3,18 @@ import Cards from './Cards';
 
 interface TechnologiesProps {
   devStack: MydevStack[];
+   handleAddToStack: (technology: MydevStack) => void;
 }
 
-const Technologies = ({ devStack }: TechnologiesProps) => {
+const Technologies = ({
+    devStack,
+    handleAddToStack
+}: TechnologiesProps) => {
   console.log(devStack, 'Technologies');
 
   return (
     <div>
-<Cards devStack={devStack}/>
+<Cards devStack={devStack} handleAddToStack={handleAddToStack}/>
     </div>
   );
 };

@@ -1,9 +1,10 @@
 import type { MydevStack } from '../../dev types/devStackType';
-interface TechnologiesProps {
+interface CardsProps {
   devStack: MydevStack[];
+  handleAddToStack: (technology: MydevStack) => void;
 }
 
-const Cards = ({ devStack }: TechnologiesProps) => {
+const Cards = ({ devStack, handleAddToStack }: CardsProps) => {
     return (
         <div className="flex flex-wrap gap-4">
       {devStack.map((item) => (
@@ -22,7 +23,12 @@ const Cards = ({ devStack }: TechnologiesProps) => {
             </p>
             <div className="card-actions justify-between items-center">
               <span className="badge badge-outline">Rating: {item.rating}</span>
-              <button className="btn btn-primary">Learn More</button>
+              <button
+    onClick={() => handleAddToStack(item)}
+    className="btn btn-primary"
+>
+    Add to Stack
+</button>
             </div>
           </div>
         </div>
