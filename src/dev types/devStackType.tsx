@@ -1,4 +1,4 @@
-interface MydevStack {
+export interface MydevStack {
     "id": string,
     "name": string,
     "category": string,
