@@ -1,14 +1,20 @@
-import { use } from 'react';
+
 import type { MydevStack } from '../../dev types/devStackType';
 import Technologies from './Technologies';
+import { use, useState } from 'react';
 
 interface DevStackProps {
     devPromise: Promise<MydevStack[]>;
 }
 
 const DevStack = ({ devPromise }: DevStackProps) => {
-    console.log(devPromise);
     const devStack = use(devPromise);
+    const [stack, setStack] = useState<MydevStack[]>([]);
+    const handleAddToStack = (technology: MydevStack) => {
+    setStack([...stack, technology]);
+};
+    console.log(devPromise);
+    
     console.log(devStack, "devStack");
 
     return (
