@@ -6,11 +6,15 @@ interface CardsProps {
 
 const Cards = ({ devStack, handleAddToStack }: CardsProps) => {
     return (
-        <div className="flex flex-wrap gap-4">
+       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {devStack.map((item) => (
-        <div key={item.id} className="card bg-base-100 w-96 shadow-sm">
+        <div key={item.id} className="card bg-base-100 shadow-sm w-full">
           <figure>
-            <img src={item.icon} alt={item.name} />
+            <img
+    src={item.icon}
+    alt={item.name}
+    className="w-20 h-20 object-contain"
+/>
           </figure>
           <div className="card-body">
             <h2 className="card-title">
