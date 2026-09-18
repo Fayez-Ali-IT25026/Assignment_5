@@ -11,13 +11,15 @@ interface DevStackProps {
 
 const DevStack = ({ devPromise }: DevStackProps) => {
     const [devStack, setDevStack] = useState<MydevStack[]>([]);
+    const [loading, setLoading] = useState(true);
     const [stack, setStack] = useState<MydevStack[]>([]);
 
     useEffect(() => {
-        devPromise.then((data) => {
-            setDevStack(data);
-        });
-    }, [devPromise]);
+    devPromise.then((data) => {
+        setDevStack(data);
+        setLoading(false);
+    });
+}, [devPromise]);
 
     const handleAddToStack = (technology: MydevStack) => {
         const alreadyAdded = stack.some(
@@ -49,11 +51,11 @@ const handleRemoveAll = () => {
         
        <>
        <ToastContainer />
-        <div className="container mx-auto">
+        <div className="container mx-auto px-4 py-10 pl-20">
             <div>
                 <h1 className="text-3xl">
                     Explore{" "}
-                    <span className="bg-gradient-to-r from-red-500 via-pink-500 to-purple-600 bg-clip-text text-transparent">
+                    <span className="gradient-primary bg-clip-text text-transparent">
                         Technologies
                     </span>
                 </h1>
@@ -66,11 +68,15 @@ const handleRemoveAll = () => {
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 mt-8">
 
                 <div className="lg:col-span-3">
-                    <Technologies
-    devStack={devStack}
-    stack={stack}
-    handleAddToStack={handleAddToStack}
-/>
+                    {loading ? (
+    <p>Loading technologies...</p>
+) : (
+    <Technologies
+        devStack={devStack}
+        stack={stack}
+        handleAddToStack={handleAddToStack}
+    />
+)}
                 </div>
 
                 <YourStack stack={stack} handleRemoveFromStack={handleRemoveFromStack} handleRemoveAll={handleRemoveAll}/>

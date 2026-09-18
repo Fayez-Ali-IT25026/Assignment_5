@@ -13,15 +13,20 @@ const YourStack = ({
     handleRemoveAll
 }: YourStackProps) => {
     return (
-        <div className="border rounded-lg p-4">
-            <h2 className="text-xl font-bold">
+        <div className="border rounded-lg p-5 shadow-sm">
+            <h2 className="text-2xl font-bold">
                 Your Stack
             </h2>
 
             <p className="text-sm text-gray-500">
                 {stack.length} Technology Selected
             </p>
-            <button onClick={handleRemoveAll} className="btn btn-sm btn-error mt-3">Remove All</button>
+            <button
+    onClick={handleRemoveAll}
+    className="btn btn-sm btn-error mt-3"
+>
+    Remove All
+</button>
 
             {stack.length === 0 && (
                 <p className="text-sm text-gray-400 mt-6">

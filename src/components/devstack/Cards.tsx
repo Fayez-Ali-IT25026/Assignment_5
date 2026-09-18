@@ -46,8 +46,8 @@ const Cards = ({
 
                 <div className="card-actions justify-between items-center">
                     <span className="badge badge-outline">
-                        Rating: {item.rating}
-                    </span>
+    ⭐ {item.rating}
+</span>
 
                     <button
                         onClick={() => handleAddToStack(item)}
