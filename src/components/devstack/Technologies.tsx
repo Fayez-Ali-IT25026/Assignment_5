@@ -3,19 +3,22 @@ import Cards from './Cards';
 
 interface TechnologiesProps {
     devStack: MydevStack[];
+    stack: MydevStack[];
     handleAddToStack: (technology: MydevStack) => void;
 }
 
 const Technologies = ({
     devStack,
+    stack,
     handleAddToStack
 }: TechnologiesProps) => {
     return (
         <div>
             <Cards
-                devStack={devStack}
-                handleAddToStack={handleAddToStack}
-            />
+    devStack={devStack}
+    stack={stack}
+    handleAddToStack={handleAddToStack}
+/>
         </div>
     );
 };
