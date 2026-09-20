@@ -57,9 +57,8 @@ For example, I used conditional rendering to show the empty stack message:
   <p>Your stack is empty</p>
 )}
 
-```text
-### 7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
+7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
 
 A parent component can pass data or functions to a child component through props.
 
-In this project, the `DevStack` component passes the `handleAddToStack` function to the `Cards` component. When the user clicks the "Add to Stack" button, the `Cards` component calls that function and sends the selected technology back to the parent.
+In this project, the DevStack component passes the handleAddToStack function to the Cards component. When the user clicks the "Add to Stack" button, the Cards component calls that function and sends the selected technology back to the parent.
